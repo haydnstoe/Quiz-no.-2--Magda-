@@ -96,13 +96,13 @@
   <div id="quiz">
     <!-- 1. Conditional -->
     <div class="question" id="q1-wrap">
-      <label for="q1">If she ____ harder, she would have passed the test.</label>
+      <label for="q1">If she had studied harder, she ______ passed the test.</label>
       <select id="q1">
         <option value="">— select —</option>
-        <option value="had studied">had studied</option>
-        <option value="studied">studied</option>
-        <option value="had been studying">had been studying</option>
-        <option value="would study">would study</option>
+        <option value="would being">would being</option>
+        <option value="will have been">will have been</option>
+        <option value="would have">would have</option>
+        <option value="would">would</option>
       </select>
       <span class="feedback"></span>
       <div class="answer-key"></div>
@@ -138,13 +138,13 @@
 
     <!-- 4. Conditional -->
     <div class="question" id="q4-wrap">
-      <label for="q4">If I ____ earlier, I wouldn't miss the bus.</label>
+      <label for="q4">If I ____ earlier, I will not miss the bus.</label>
       <select id="q4">
         <option value="">— select —</option>
         <option value="left">left</option>
         <option value="had left">had left</option>
         <option value="will leave">will leave</option>
-        <option value="would leave">would leave</option>
+        <option value="leave">leave</option>
       </select>
       <span class="feedback"></span>
       <div class="answer-key"></div>
@@ -180,13 +180,13 @@
 
     <!-- 7. Conditional -->
     <div class="question" id="q7-wrap">
-      <label for="q7">If he ____ the email, he would have known about the meeting.</label>
+      <label for="q7">If I _____ a lot of money, I would buy a large house, and a duck.</label>
       <select id="q7">
         <option value="">— select —</option>
-        <option value="had read">had read</option>
-        <option value="read">read</option>
-        <option value="would read">would read</option>
-        <option value="has read">has read</option>
+        <option value="had">had</option>
+        <option value="have">have</option>
+        <option value="would have">would have</option>
+        <option value="has had">has had</option>
       </select>
       <span class="feedback"></span>
       <div class="answer-key"></div>
@@ -306,7 +306,7 @@
 
     <!-- 16. Conditional -->
     <div class="question" id="q16-wrap">
-      <label for="q16">If she hadn't been a doctor, she wouldn't have been allowed to prescribe.</label>
+      <label for="q16">If she hadn't been a doctor, she wouldn't _____ allowed to prescribe.</label>
       <select id="q16">
         <option value="">— select —</option>
         <option value="had been">had been</option>
@@ -381,13 +381,13 @@
   <script>
     // answer key: string or [alt1, alt2]
     const answers = {
-      q1:  ["had studied","had been studying"],
+      q1:  ["would have"],
       q2:  ["She said she was going to the market.","She said that she was going to the market."],
       q3:  "to do something badly or cheaply",
-      q4:  "left",
+      q4:  "leave",
       q5:  ["Tomek said he could swim very well.","Tomek said that he could swim very well."],
       q6:  "to go to bed",
-      q7:  "had read",
+      q7:  "had",
       q8:  ["He said he would see me the next day.","He said that he would see me the next day."],
       q9:  "to reveal a secret",
       q10: "will get",
@@ -396,7 +396,7 @@
       q13: ["would have","could have"],
       q14: ["Mark said he had finished the work.","Mark said that he had finished the work."],
       q15: "to endure a painful situation",
-      q16: "had been",
+      q16: "have been",
       q17: ["They said they were planning a trip.","They said that they were planning a trip."],
       q18: "to be very expensive",
       q19: "will",
