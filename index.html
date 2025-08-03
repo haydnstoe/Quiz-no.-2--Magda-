@@ -1,22 +1,472 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-GB">
 <head>
-  <title>Interactive Quiz</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Quiz no. 2  (Magda)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 1rem;
+    }
+    p.intro {
+      background: #eef5ff;
+      padding: 10px 15px;
+      border-left: 4px solid #003366;
+      margin-bottom: 2rem;
+    }
+    .question {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 1.5rem;
+    }
+    .question label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    select {
+      padding: 0.4rem;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 100%;
+    }
+    .feedback {
+      display: block;
+      margin-top: 6px;
+      font-weight: bold;
+    }
+    .answer-key {
+      font-style: italic;
+      margin-top: 4px;
+      color: #333;
+    }
+    .correct .feedback,
+    .correct label {
+      color: green;
+    }
+    .incorrect .feedback,
+    .incorrect label {
+      color: red;
+    }
+    .correct select {
+      border: 2px solid green;
+    }
+    .incorrect select {
+      border: 2px solid red;
+    }
+    button {
+      display: block;
+      margin: 2rem auto;
+      padding: 0.6rem 1.2rem;
+      background: #003366;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #002244;
+    }
+    #result {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <h1>HTML Basics Quiz</h1>
-  <form id="quiz-form">
-    <div>
-      <p>1. What does HTML stand for?</p>
-      <input type="radio" name="q1" value="a"> Home Tool Markup Language<br>
-      <input type="radio" name="q1" value="b"> HyperText Markup Language<br>
-      <input type="radio" name="q1" value="c"> Hyperlink Text Management Language<br>
+
+  <h1>Quiz no. 2  (Magda)</h1>
+  <p class="intro"> Select one option per question, then click <strong>Submit Answers</strong>.
+  </p>
+
+  <div id="quiz">
+    <!-- 1. Conditional -->
+    <div class="question" id="q1-wrap">
+      <label for="q1">If she ____ harder, she would have passed the test.</label>
+      <select id="q1">
+        <option value="">— select —</option>
+        <option value="had studied">had studied</option>
+        <option value="studied">studied</option>
+        <option value="had been studying">had been studying</option>
+        <option value="would study">would study</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
     </div>
-    <button type="button" onclick="submitQuiz()">Submit</button>
-  </form>
+
+    <!-- 2. Reported speech -->
+    <div class="question" id="q2-wrap">
+      <label for="q2">She said, “I am going to the market.” Reported:</label>
+      <select id="q2">
+        <option value="">— select —</option>
+        <option value="She said she was going to the market.">She said she was going to the market.</option>
+        <option value="She said that she was going to the market.">She said that she was going to the market.</option>
+        <option value="She told she was going to the market.">She told she was going to the market.</option>
+        <option value="She says she is going to the market.">She says she is going to the market.</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 3. Idiom -->
+    <div class="question" id="q3-wrap">
+      <label for="q3">To cut corners means:</label>
+      <select id="q3">
+        <option value="">— select —</option>
+        <option value="to do something badly or cheaply">to do something badly or cheaply</option>
+        <option value="to shorten a trip">to shorten a trip</option>
+        <option value="to save paper">to save paper</option>
+        <option value="to cut something into pieces">to cut something into pieces</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 4. Conditional -->
+    <div class="question" id="q4-wrap">
+      <label for="q4">If I ____ earlier, I wouldn't miss the bus.</label>
+      <select id="q4">
+        <option value="">— select —</option>
+        <option value="left">left</option>
+        <option value="had left">had left</option>
+        <option value="will leave">will leave</option>
+        <option value="would leave">would leave</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 5. Reported speech -->
+    <div class="question" id="q5-wrap">
+      <label for="q5">Tomek said, “I can swim very well.” Reported:</label>
+      <select id="q5">
+        <option value="">— select —</option>
+        <option value="Tomek said he could swim very well.">Tomek said he could swim very well.</option>
+        <option value="Tomek said that he could swim very well.">Tomek said that he could swim very well.</option>
+        <option value="Tomek says he can swim very well.">Tomek says he can swim very well.</option>
+        <option value="Tomwk told he could swim very well.">Tomek told he could swim very well.</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 6. Idiom -->
+    <div class="question" id="q6-wrap">
+      <label for="q6">To hit the sack means:</label>
+      <select id="q6">
+        <option value="">— select —</option>
+        <option value="to go to bed">to go to bed</option>
+        <option value="to break something">to break something</option>
+        <option value="to hit a target">to hit a target</option>
+        <option value="to fold clothes">to fold clothes</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 7. Conditional -->
+    <div class="question" id="q7-wrap">
+      <label for="q7">If he ____ the email, he would have known about the meeting.</label>
+      <select id="q7">
+        <option value="">— select —</option>
+        <option value="had read">had read</option>
+        <option value="read">read</option>
+        <option value="would read">would read</option>
+        <option value="has read">has read</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 8. Reported speech -->
+    <div class="question" id="q8-wrap">
+      <label for="q8">“I will see you tomorrow,” he said. Reported:</label>
+      <select id="q8">
+        <option value="">— select —</option>
+        <option value="He said he would see me the next day.">He said he would see me the next day.</option>
+        <option value="He said that he would see me the next day.">He said that he would see me the next day.</option>
+        <option value="He says he will see me tomorrow.">He says he will see me tomorrow.</option>
+        <option value="He told he would see me tomorrow.">He told he would see me tomorrow.</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 9. Idiom -->
+    <div class="question" id="q9-wrap">
+      <label for="q9">To spill the beans means:</label>
+      <select id="q9">
+        <option value="">— select —</option>
+        <option value="to reveal a secret">to reveal a secret</option>
+        <option value="to drop food">to drop food</option>
+        <option value="to scare someone">to scare someone</option>
+        <option value="to plant beans">to plant beans</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 10. Conditional -->
+    <div class="question" id="q10-wrap">
+      <label for="q10">If they arrive on time, they ____ a seat.</label>
+      <select id="q10">
+        <option value="">— select —</option>
+        <option value="will get">will get</option>
+        <option value="get">get</option>
+        <option value="would get">would get</option>
+        <option value="got">got</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 11. Reported speech -->
+    <div class="question" id="q11-wrap">
+      <label for="q11">She told me, “Don’t be late.” Reported: </label>
+      <select id="q11">
+        <option value="">— select —</option>
+        <option value="She told me not to be late.">She told me not to be late.</option>
+        <option value="She said not to be late.">She said not to be late.</option>
+        <option value="She told me don’t be late.">She told me don’t be late.</option>
+        <option value="She said I should not be late.">She said I should not be late.</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 12. Idiom -->
+    <div class="question" id="q12-wrap">
+      <label for="q12">To break the ice means:</label>
+      <select id="q12">
+        <option value="">— select —</option>
+        <option value="to ease tension">to ease tension</option>
+        <option value="to shatter ice">to shatter ice</option>
+        <option value="to start a fight">to start a fight</option>
+        <option value="to freeze up">to freeze up</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 13. Conditional -->
+    <div class="question" id="q13-wrap">
+      <label for="q13">If you had told me, I ____ helped you.</label>
+      <select id="q13">
+        <option value="">— select —</option>
+        <option value="would have">would have</option>
+        <option value="will have">will have</option>
+        <option value="would">would</option>
+        <option value="could have">could have</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 14. Reported speech -->
+    <div class="question" id="q14-wrap">
+      <label for="q14">Mark said, “I have finished the work.” Reported:</label>
+      <select id="q14">
+        <option value="">— select —</option>
+        <option value="Mark said he had finished the work.">Mark said he had finished the work.</option>
+        <option value="Mark said that he had finished the work.">Mark said that he had finished the work.</option>
+        <option value="Mark says he has finished the work.">Mark says he has finished the work.</option>
+        <option value="Mark told he had finished the work.">Mark told he had finished the work.</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 15. Idiom -->
+    <div class="question" id="q15-wrap">
+      <label for="q15">To bite the bullet means:</label>
+      <select id="q15">
+        <option value="">— select —</option>
+        <option value="to endure a painful situation">to endure a painful situation</option>
+        <option value="to chew food">to chew food</option>
+        <option value="to shoot a gun">to shoot a gun</option>
+        <option value="to avoid pain">to avoid pain</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 16. Conditional -->
+    <div class="question" id="q16-wrap">
+      <label for="q16">If she hadn't been a doctor, she wouldn't have been allowed to prescribe.</label>
+      <select id="q16">
+        <option value="">— select —</option>
+        <option value="had been">had been</option>
+        <option value="were">were</option>
+        <option value="was">was</option>
+        <option value="have been">have been</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 17. Reported speech -->
+    <div class="question" id="q17-wrap">
+      <label for="q17">They said, “We are planning a trip.” Reported:</label>
+      <select id="q17">
+        <option value="">— select —</option>
+        <option value="They said they were planning a trip.">They said they were planning a trip.</option>
+        <option value="They said that they were planning a trip.">They said that they were planning a trip.</option>
+        <option value="They say they are planning a trip.">They say they are planning a trip.</option>
+        <option value="They told they were planning a trip.">They told they were planning a trip.</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 18. Idiom -->
+    <div class="question" id="q18-wrap">
+      <label for="q18">To cost an arm and a leg means:</label>
+      <select id="q18">
+        <option value="">— select —</option>
+        <option value="to be very expensive">to be very expensive</option>
+        <option value="to injure someone badly">to injure someone badly</option>
+        <option value="to lose limbs">to lose limbs</option>
+        <option value="to work hard">to work hard</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 19. Conditional -->
+    <div class="question" id="q19-wrap">
+      <label for="q19">If he finishes his homework, he ____ get a treat.</label>
+      <select id="q19">
+        <option value="">— select —</option>
+        <option value="will">will</option>
+        <option value="would">would</option>
+        <option value="can">can</option>
+        <option value="should">should</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+
+    <!-- 20. Reported speech -->
+    <div class="question" id="q20-wrap">
+      <label for="q20">“Please sit down,” she said. Reported:</label>
+      <select id="q20">
+        <option value="">— select —</option>
+        <option value="She asked me to sit down.">She asked me to sit down.</option>
+        <option value="She told me to sit down.">She told me to sit down.</option>
+        <option value="She said me to sit down.">She said me to sit down.</option>
+        <option value="She said I should sit down.">She said I should sit down.</option>
+      </select>
+      <span class="feedback"></span>
+      <div class="answer-key"></div>
+    </div>
+  </div>
+
+  <button onclick="submitQuiz()">Submit Answers</button>
   <div id="result"></div>
 
-  <script src="script.js"></script>
+  <script>
+    // answer key: string or [alt1, alt2]
+    const answers = {
+      q1:  ["had studied","had been studying"],
+      q2:  ["She said she was going to the market.","She said that she was going to the market."],
+      q3:  "to do something badly or cheaply",
+      q4:  "left",
+      q5:  ["Tomek said he could swim very well.","Tomek said that he could swim very well."],
+      q6:  "to go to bed",
+      q7:  "had read",
+      q8:  ["He said he would see me the next day.","He said that he would see me the next day."],
+      q9:  "to reveal a secret",
+      q10: "will get",
+      q11: ["She told me not to be late.","She said not to be late."],
+      q12: "to ease tension",
+      q13: ["would have","could have"],
+      q14: ["Mark said he had finished the work.","Mark said that he had finished the work."],
+      q15: "to endure a painful situation",
+      q16: "had been",
+      q17: ["They said they were planning a trip.","They said that they were planning a trip."],
+      q18: "to be very expensive",
+      q19: "will",
+      q20: ["She asked me to sit down.","She told me to sit down."]
+    };
+
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quiz  = document.getElementById("quiz");
+      const cards = Array.from(quiz.children);
+      shuffle(cards);
+      cards.forEach(c => quiz.appendChild(c));
+
+      cards.forEach(card => {
+        const sel  = card.querySelector("select");
+        const opts = Array.from(sel.options);
+        const ph   = opts.shift(); 
+        shuffle(opts);
+        sel.innerHTML = "";
+        sel.appendChild(ph);
+        opts.forEach(o => sel.appendChild(o));
+      });
+    });
+
+    function submitQuiz() {
+      let right = 0, wrong = 0;
+      for (let i = 1; i <= 20; i++) {
+        const wrap = document.getElementById(`q${i}-wrap`);
+        const sel  = wrap.querySelector("select");
+        const fb   = wrap.querySelector(".feedback");
+        const ak   = wrap.querySelector(".answer-key");
+        const val  = sel.value;
+        const key  = answers[`q${i}`];
+
+        wrap.classList.remove("correct","incorrect");
+        fb.textContent = "";
+        ak.textContent = "";
+
+        let correct = Array.isArray(key) 
+          ? key.includes(val) 
+          : val === key;
+
+        if (correct) {
+          wrap.classList.add("correct");
+          fb.textContent = "Correct!";
+          right++;
+        } else {
+          wrap.classList.add("incorrect");
+          fb.textContent = "Incorrect";
+          wrong++;
+        }
+
+        if (Array.isArray(key)) {
+          ak.textContent = `Answer: ${key[0]} or ${key[1]}`;
+        } else {
+          ak.textContent = `Answer: ${key}`;
+        }
+
+        sel.disabled = true;
+      }
+      document.getElementById("result").textContent =
+        `You got ${right} correct and ${wrong} incorrect out of 20.`;
+    }
+  </script>
+
 </body>
 </html>
